@@ -7,10 +7,12 @@ RUN apt-get update && apt-get install -q -y libpng12-dev libjpeg-dev exim4 mailu
 	&& rm -rf /var/lib/apt/lists/* \
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
 	&& docker-php-ext-install gd \
+	&& docker-php-ext-configure mbstring --enable-mbstring \
+	&& docker-php-ext-install mbstring \
+	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install opcache
-RUN docker-php-ext-install mysqli
 
-# Install xdebug
+# Install PECL extensions
 RUN pecl install xdebug
 
 # Add PHP Configuration file for OPcache
