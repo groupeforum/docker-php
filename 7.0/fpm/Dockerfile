@@ -1,6 +1,6 @@
 FROM php:7.0-fpm
 
-MAINTAINER Florian Girardey <florian@girardey.net>
+MAINTAINER Florian GIRARDEY <fgirardey@groupeforum.pro>
 
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -q -y libpng12-dev libjpeg-dev exim4 mailutils \

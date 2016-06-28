@@ -1,6 +1,6 @@
 FROM php:7.0-apache
 
-MAINTAINER Florian Girardey <florian@girardey.net>
+MAINTAINER Florian GIRARDEY <fgirardey@groupeforum.pro>
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
