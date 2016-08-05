@@ -4,12 +4,12 @@ MAINTAINER Florian GIRARDEY <fgirardey@groupeforum.pro>
 
 # install the PHP extensions we need
 RUN apk add --update freetype-dev libpng-dev libjpeg-turbo-dev libxml2-dev autoconf g++ imagemagick-dev libtool make \
-    && docker-php-ext-install gd \
     && docker-php-ext-configure gd \
         --with-gd \
         --with-freetype-dir=/usr/include/ \
         --with-png-dir=/usr/include/ \
         --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install gd \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
